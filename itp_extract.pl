@@ -57,7 +57,7 @@ MAIN: {
 	my @agenda_ids;
 	
 	BIBS: {
-		open my $bib_out,'>',("$body$session\_bib.mrc" =~ s./..r);
+		open my $bib_out,'>:utf8',("$body$session\_bib.mrc" =~ s./..r);
 		
 		# find the bib records that link to the series symbol
 		
@@ -88,7 +88,7 @@ MAIN: {
 	}
 	
 	AUTHS: {
-		open my $auth_out,'>',("$body$session\_auth.mrc" =~ s./..r);
+		open my $auth_out,'>:utf8',("$body$session\_auth.mrc" =~ s./..r);
 		
 		# use the unique agenda auth#s to look up the auth records 
 		
