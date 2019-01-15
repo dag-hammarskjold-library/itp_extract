@@ -27,7 +27,7 @@ sub tag_sub_val {
 					value => $val,
 				),
 			}
-		},
+		}
 	}
 }
 
@@ -69,7 +69,7 @@ MAIN: {
 			]
 		};
 			
-		my $cursor = $BIB->find($query)->limit();
+		my $cursor = $BIB->find($query);
 		my $i = 0;
 		
 		print "bibs processed:  ";
