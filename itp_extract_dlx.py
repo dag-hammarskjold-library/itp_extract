@@ -32,11 +32,11 @@ import yaml
 
 
 if __name__ == '__main__':
-    #arguments = docopt(__doc__,version='itp_extract 1.0')
-    #body = arguments['--body']
-    #session = arguments['--session']
-    body='S/'
-    session='70'
+    arguments = docopt(__doc__,version='itp_extract 1.0')
+    body = arguments['--body']
+    session = arguments['--session']
+    #body='S/'
+    #session='70'
 
     bib_out = re.sub('/','',str(body)) + str(session) + '_BIB'
     auth_out = re.sub('/','',str(body)) + str(session) + '_AUTH'
