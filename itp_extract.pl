@@ -2,11 +2,22 @@ use v5.10;
 use strict;
 use warnings;
 
-use Data::Dumper;
+# core modules (no need tto install)
+
 use List::Util qw<any all none uniq>;
+
+# local libraries (included in this repo)
+
+use FindBin;
+use lib "$FindBin::Bin/lib";
+use MARC;
+
+# Dependencies to install from CPAN i.e.,
+# 	cpanm install MongoDB
+#	cpanm install Tie::IxHash
+
 use MongoDB;
 use Tie::IxHash;
-use MARC::Record;
 
 # global objects to access database
 # get connection string from first command line arg
