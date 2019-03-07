@@ -6,7 +6,7 @@ use Data::Dumper;
 use List::Util qw<any all none uniq>;
 use MongoDB;
 use Tie::IxHash;
-use MARC;
+use MARC::Record;
 
 # global objects to access database
 # get connection string from first command line arg
@@ -34,6 +34,8 @@ sub tag_sub_val {
 MAIN: {
 	# get body and session from 2nd and 3rd command line args
 	my ($body, $session) = @ARGV[1,2];
+	$body .= '/' if substr($body,-1) ne '/';
+	
 	local $| = 1;
 
 	# get auth# of series symbol
